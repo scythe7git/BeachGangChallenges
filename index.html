@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Beach Gang Login</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #111827, #1f2937);
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+    }
+
+    .box {
+      background: rgba(255,255,255,0.08);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      width: 300px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: #facc15;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #error {
+      color: #f87171;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h2>☀️ Beach Gang</h2>
+    <p>Enter Password</p>
+
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="checkPassword()">Enter</button>
+
+    <div id="error"></div>
+  </div>
+
+  <script>
+    const PASSWORD = "beachgang2026"; // change this
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+
+      if (input === PASSWORD) {
+        sessionStorage.setItem("loggedIn", "true");
+        window.location.href = "mRhxrja5QnBCSHFb.html";
+      } else {
+        document.getElementById("error").textContent = "Wrong password.";
+      }
+    }
+
+    document.getElementById("password").addEventListener("keypress", function(e) {
+      if (e.key === "Enter") {
+        checkPassword();
+      }
+    });
+  </script>
+
+</body>
+</html>
